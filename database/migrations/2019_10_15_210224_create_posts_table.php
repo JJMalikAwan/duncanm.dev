@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('markdown');
-            $table->timestamp('is_published');
+            $table->timestamp('is_published')->nullable();
             $table->boolean('posted_on_dev_to')->default(false);
             $table->timestamps();
         });
