@@ -6,9 +6,12 @@
         </div>
 
         <p>{{ substr(strip_tags($post->markdown), 0, 140) }}</p>
-
-        @auth
-            <a class="mt-2 text-gray-700 font-medium mt-4 block" href="{{ route('posts.edit', ['post' => $post]) }}">Edit post</a>
-        @endauth
     </a>
+
+    @auth
+        <div class="mt-6 flex flex-row items-center justify-between">
+            <a class="mt-2 text-gray-700 font-medium mt-4 block" href="{{ route('posts.edit', ['post' => $post]) }}">Edit post</a>
+            <a class="mt-2 text-red-700 font-medium mt-4 block" href="{{ route('posts.destroy', ['post' => $post]) }}">Delete</a>
+        </div>
+    @endauth
 </article>
