@@ -32,7 +32,7 @@ class Post extends Model
         $query
             ->whereNotNull('is_published')
             ->whereDate('is_published', '<=', now())
-            ->orderBy('is_published', 'asc');
+            ->orderBy('is_published', 'desc');
     }
 
     public function getDateAttribute()

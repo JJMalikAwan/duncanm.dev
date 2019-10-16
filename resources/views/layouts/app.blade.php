@@ -9,6 +9,12 @@
 </head>
 <body class="text-gray-800">
     <div id="app">
+        @auth
+            <div class="fixed bottom-0 right-0 bg-gray-800 px-6 py-2 rounded-t-lg mx-2 text-center text-white font-medium">
+                Logged in
+            </div>
+        @endauth
+
         <header id="header" class="w-full mb-12">
             <div class="border-b py-4 px-2 border-gray-200 container mx-auto flex flex-row items-center justify-between">
                 <a class="flex flex-row items-center" href="/">

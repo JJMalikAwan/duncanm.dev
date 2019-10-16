@@ -10,5 +10,12 @@
         <div class="content-area">
             {!! $post->markdown !!}
         </div>
+
+        @auth
+            <div class="border-t-2 border-gray-400 mt-6 flex flex-row items-center justify-between">
+                <a class="mt-2 text-gray-700 font-medium mt-4 block" href="{{ route('posts.edit', ['post' => $post]) }}">Edit post</a>
+                <a class="mt-2 text-red-700 font-medium mt-4 block" href="{{ route('posts.destroy', ['post' => $post]) }}">Delete</a>
+            </div>
+        @endauth
     </div>
 @endsection

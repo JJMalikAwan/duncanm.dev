@@ -57,3 +57,33 @@
         @apply bg-gray-100 rounded-lg p-2 my-4 font-mono w-full;
     }
 }
+
+form {
+    div {
+        @apply flex flex-col mb-4;
+
+        label {
+            @apply mb-1 font-medium text-sm;
+        }
+
+        input {
+            @apply p-1 rounded-lg bg-white border-2 border-gray-400 text-gray-900 font-medium;
+
+            &:hover {
+                @apply border-gray-500;
+            }
+        }
+
+        span {
+            @apply text-red-500 text-sm font-medium;
+        }
+    }
+
+    button {
+        @apply w-full p-1 rounded-lg bg-gray-700 text-center text-white font-medium;
+
+        &:hover {
+            @apply bg-gray-800;
+        }
+    }
+}

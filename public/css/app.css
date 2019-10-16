@@ -11426,6 +11426,52 @@ video {
     width: 100%;
   }
 
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+form div label {
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+
+form div input {
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+      background-color: #fff;
+      border-width: 2px;
+      border-color: #cbd5e0;
+      color: #1a202c;
+      font-weight: 500;
+    }
+
+form div input:hover {
+        border-color: #a0aec0;
+      }
+
+form div span {
+      color: #f56565;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+form button {
+    width: 100%;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: #4a5568;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+  }
+
+form button:hover {
+      background-color: #2d3748;
+    }
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
