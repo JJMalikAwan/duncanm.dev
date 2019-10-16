@@ -8,6 +8,13 @@ class DevTo
 {
     public $base = 'https://dev.to/api';
 
+    public function __construct()
+    {
+        if (config('app.services.dev') === null) {
+            return null;
+        }
+    }
+
     public function createArticle($post)
     {
         $response = Zttp::withHeaders([
