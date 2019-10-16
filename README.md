@@ -6,7 +6,6 @@ The site's not done yet. In fact, it'll probably never be done. Although, when i
 
 ## Roadmap
 
-* [ ] Dev.to auto-publishing
 * [ ] S3 Media uploads
 * [ ] SEO optimisation
 * [ ] Change when post is published

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
+use App\Jobs\PublishOnDevTo;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,8 @@ class PostController extends Controller
         $post->is_published = now();
         $post->posted_on_dev_to = false;
         $post->save();
+
+        PublishOnDevTo::dispatchNow($post);
 
         return redirect(route('posts.show', ['post' => $post]));
     }
