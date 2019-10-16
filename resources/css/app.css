@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mini-container {
+    @apply w-2/3 mx-auto;
+}
+
+.content-area {
+    @apply text-gray-900 leading-relaxed font-normal;
+
+    > * + * {
+        @apply mt-6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-gray-900 leading-tight;
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2 {
+        @apply text-3xl;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    h4 {
+        @apply text-xl;
+    }
+
+    a {
+        -webkit-box-shadow: inset 0 -4px 0 theme('colors.gray.400');
+        -moz-box-shadow: inset 0 -4px 0 theme('colors.gray.400');
+        box-shadow: inset 0 -4px 0 theme('colors.gray.400');
+
+        &:hover {
+            -webkit-box-shadow: inset 0 -4px 0 theme('colors.gray.500');
+            -moz-box-shadow: inset 0 -4px 0 theme('colors.gray.500');
+            box-shadow: inset 0 -4px 0 theme('colors.gray.500');
+        }
+    }
+
+    ul {
+        @apply list-disc pl-6;
+
+        li + li {
+            @apply mt-2;
+        }
+    }
+
+    pre {
+        @apply bg-gray-100 rounded-lg p-2 my-4 font-mono w-full;
+    }
+}

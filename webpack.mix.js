@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
+const postCssNested = require('postcss-nested');
 require('laravel-mix-purgecss');
 
 /*
@@ -15,7 +16,8 @@ require('laravel-mix-purgecss');
 
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        tailwindcss()
+        tailwindcss(),
+        postCssNested()
     ])
     .browserSync({
         proxy: 'http://duncanm.test'

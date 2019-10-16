@@ -2,8 +2,10 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use GitDown\Facades\GitDown;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Post extends Model
 {
@@ -23,5 +25,18 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function scopePublished(Builder $query)
+    {
+        $query
+            ->whereNotNull('is_published')
+            ->whereDate('is_published', '<=', now())
+            ->orderBy('is_published', 'asc');
+    }
+
+    public function getDateAttribute()
+    {
+        return Carbon::parse($this->attributes['is_published'])->toFormattedDateString();
     }
 }

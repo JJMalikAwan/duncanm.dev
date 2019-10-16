@@ -11,6 +11,7 @@
     "dependencies": {
         "laravel-mix": "^5.0.0",
         "laravel-mix-purgecss": "^4.2.0",
+        "postcss-nested": "^4.1.2",
         "tailwindcss": "^1.1.2"
     },
     "devDependencies": {

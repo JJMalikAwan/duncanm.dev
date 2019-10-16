@@ -7,34 +7,35 @@
     <title>Duncan McClean</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
+<body class="text-gray-800">
     <div id="app">
-        <header id="header" class="bg-indigo-400 w-full mb-12 p-6">
-            <div class="container mx-auto flex flex-row items-center justify-between">
+        <header id="header" class="w-full mb-12">
+            <div class="border-b py-4 px-2 border-gray-200 container mx-auto flex flex-row items-center justify-between">
                 <a class="flex flex-row items-center" href="/">
-                    <img class="w-16 h-16 rounded-full mr-4" src="https://damcclean-blog.s3.amazonaws.com/duncan.jpg" alt="Duncan McClean">
-
-                    <span class="flex flex-col text-sm font-medium">
-                        <strong class="font-bold text-xl">Duncan McClean</strong>
-                        Teenage Web Developer & College Student
-                    </span>
+                    <img class="w-12 h-12 rounded-full mr-4" src="https://damcclean-blog.s3.amazonaws.com/duncan.jpg" alt="Duncan McClean">
+                    <strong class="font-medium text-lg">Duncan McClean</strong>
                 </a>
 
                 <nav class="flex flex-row items-center">
-                    <a class="mx-4 uppercase font-bold text-sm text-black" href="{{ route('home') }}">
-                        Home
-                    </a>
-
-                    <a class="mx-4 uppercase font-bold text-sm text-black" href="#">
+                    <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('posts.index')) border-gray-400 @endif hover:border-gray-400" href="{{ route('posts.index') }}">
                         Posts
+                    </a>
+                    <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('about')) border-gray-400 @endif hover:border-gray-400" href="{{ route('about') }}">
+                        About
                     </a>
                 </nav>
             </div>
         </header>
 
-        <div class="container mx-auto">
+        <main class="container mx-auto">
             @yield('content')
-        </div>
+        </main>
+
+        <footer id="footer" class="w-full mt-12">
+            <div class="border-t py-4 px-2 border-gray-200 container mx-auto">
+                <p class="text-center text-sm text-gray-700 font-medium">&copy {{ now()->format('Y') }} Duncan McClean</p>
+            </div>
+        </footer>
     </div>
 
     <script src="{{ mix('js/app.js') }}"></script>
