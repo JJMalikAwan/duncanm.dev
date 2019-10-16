@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Duncan McClean</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="alternate" type="application/atom+xml" title="News" href="/feed">
 </head>
 <body class="text-gray-800">
     <div id="app">

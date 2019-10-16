@@ -6,8 +6,10 @@ use Carbon\Carbon;
 use GitDown\Facades\GitDown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Post extends Model
+class Post extends Model implements Feedable
 {
     protected $fillable = [
         'title', 'slug', 'markdown', 'is_published', 'posted_on_dev_to'
@@ -38,5 +40,21 @@ class Post extends Model
     public function getDateAttribute()
     {
         return Carbon::parse($this->attributes['is_published'])->toFormattedDateString();
+    }
+
+    public function toFeedItem()
+    {
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->title)
+            ->summary(strip_tags($this->markdown))
+            ->updated($this->updated_at)
+            ->link(route('posts.show', ['post' => $this]))
+            ->author('Duncan McClean');
+    }
+
+    public static function getFeedItems()
+    {
+        return Post::published()->get();
     }
 }

@@ -12,6 +12,7 @@
 */
 
 Auth::routes();
+Route::feeds();
 
 Route::get('/', 'PostController@index')
     ->name('posts.index');
