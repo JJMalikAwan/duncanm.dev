@@ -15,3 +15,4 @@ The site's not done yet. In fact, it'll probably never be done. Although, when i
 * [ ] Change when post is published
 * [ ] add errors to crud update screens
 * [ ] Customise slug
+* [ ] Code highlighting
