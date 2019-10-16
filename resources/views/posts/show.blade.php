@@ -8,6 +8,10 @@
         </header>
 
         <div class="content-area">
+            @if (\Carbon\Carbon::parse($post->is_published)->lessThan(now()->subYear()))
+                @include('partials.old-post')
+            @endif
+
             {!! $post->markdown !!}
         </div>
 
