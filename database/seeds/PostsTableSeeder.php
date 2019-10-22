@@ -95,7 +95,95 @@ pbcopy &lt; ~/.ssh/id_rsa.pub</code></pre><!--kg-card-end: code--><blockquote>I\
             [
                 'title' => 'RSS Feeds and Sitemaps in Statamic',
                 'slug' => 'statamic-rss-sitemaps',
-                'markdown' => '<p><a href="https://statamic.com/"><strong>Statamic</strong></a> is a flat-file content management system built on the Laravel framework.</p><p>If you\'ve built a website with Statamic, you\'ll know that by default, Statamic does not automatically come with RSS feeds or Sitemaps. In this article I will show you how to setup a simple RSS feed and a simple sitemap for your Statamic website.</p><p>The first thing you will need is a Statamic site and a theme. Which you\'ll most likly have if you\'re reading this article.</p><p>First things first, create a new layout, I called mine xml.html, you can call it whatever you like. In that file, just copy and paste the following:</p><!--kg-card-begin: html--><script src="https://gist.github.com/cb2c6a5cf944d04f30d92403b78f7c02.js"></script><!--kg-card-end: html--><p>Now we can create two new templates. One for your sitemap and one for your RSS feed.</p><h1 id="rss-feed">RSS Feed</h1><p>This is the code I use for my RSS Feed on my site. You can fill it out with more details if you need to. It\'s just a really simple template.</p><!--kg-card-begin: html--><script src="https://gist.github.com/681b74bff93c79b6ad3a3e09c9f7d510.js"></script><!--kg-card-end: html--><h1 id="sitemap">Sitemap</h1><p>Below is what I use for the sitemap on this site. Again, it\'s all really basic. All the below sitemap does is get the latest from the blog collection and loops them.</p><!--kg-card-begin: html--><script src="https://gist.github.com/b25dcacd6bc9276941feffc721d615c2.js"></script><!--kg-card-end: html--><p>After you have created the two files, you need to add them to your <code>site/settings/routes.yaml</code> file so they can actually be used. Copy and paste the following into your routes file.</p><!--kg-card-begin: html--><script src="https://gist.github.com/afa058dc8bef4384d459865a8f6120c2.js"></script><!--kg-card-end: html--><p>After you have copied it into your routes file, it should look something like this.</p><!--kg-card-begin: html--><script src="https://gist.github.com/7fe1299bedf1d1ab6c0640faac482cb6.js"></script><!--kg-card-end: html--><p>You should now be able to view your RSS feed and sitemap at the following URLs.</p><ul><li>RSS Feed: <code>https://your-site.com/feed</code></li><li>Sitemap: <code>https://your-site.com/sitemap.xml</code></li></ul>',
+                'markdown' => '[**Statamic**](https://statamic.com/) is a flat-file content management system built on the Laravel framework.
+
+If you\'ve built a website with Statamic, you\'ll know that by default, Statamic does not automatically come with RSS feeds or Sitemaps. In this article I will show you how to setup a simple RSS feed and a simple sitemap for your Statamic website.
+
+The first thing you will need is a Statamic site and a theme. Which you\'ll most likly have if you\'re reading this article.
+
+First things first, create a new layout, I called mine xml.html, you can call it whatever you like. In that file, just copy and paste the following:
+
+```
+{{ template_content }}
+```
+
+Now we can create two new templates. One for your sitemap and one for your RSS feed.
+
+## RSS Feed
+
+This is the code I use for my RSS Feed on my site. You can fill it out with more details if you need to. It\'s just a really simple template.
+
+```
+{{ xml_header }}
+<title>Your Site Name</title>
+<link>https://your.site.com</link>
+<description>Description of your site</description>
+<category>The category of your website</category>
+
+{{ collection:blog paginate="true" as="posts" }}
+  {{ posts scope="tag" }}
+    <item>
+      <title>{{ title }}</title>
+      <link>https://your.site.com{{ url }}</link>
+      <description>{{ content | striptags }}</description>
+      <pubDate>{{ date format="M j, Y" }}</pubDate>
+    </item>
+  {{ /posts }}
+{{ /collection:blog }}
+```
+
+## Sitemap
+
+Below is what I use for the sitemap on this site. Again, it\'s all really basic. All the below sitemap does is get the latest from the blog collection and loops them.
+
+```
+{{ xml_header }}
+{{ collection:blog as="posts" }}
+	{{ posts scope="tag" }}
+		<loc>https://your.site.com{{ url }}</loc>
+  	<changefreq>weekly</changefreq>
+  	<priority>0.5</priority>
+	{{ /posts }}
+{{ /collection:blog }}
+```
+
+After you have created the two files, you need to add them to your `site/settings/routes.yaml` file so they can actually be used. Copy and paste the following into your routes file.
+
+```yaml
+/feed:
+  template: xml/feed
+  layout: xml
+  content_type: xml
+/sitemap.xml:
+  template: xml/sitemap
+  layout: xml
+  content_type: xml
+```
+
+After you have copied it into your routes file, it should look something like this.
+
+```yaml
+routes:
+  /blog/tags: blog/taxonomies
+  /search: search
+  /login: auth/login
+  /register: auth/register
+  /forgot-password: auth/password-forgot
+  /reset-password: auth/password-reset
+  /feed:
+    template: xml/feed
+    layout: xml
+    content_type: xml
+  /sitemap.xml:
+    template: xml/sitemap
+    layout: xml
+    content_type: xml
+```
+
+You should now be able to view your RSS feed and sitemap at the following URLs.
+
+- RSS Feed: `https://your-site.com/feed`
+- Sitemap: `https://your-site.com/sitemap.xml`'
                 'is_published' => '2018-03-22T19:37:00.000+00:00'
             ],
             [
