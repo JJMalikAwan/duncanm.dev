@@ -107,7 +107,8 @@ class PostTest extends TestCase
             ->actingAs($user)
             ->post('/'.$post->slug.'/edit', [
                 'title' => $title,
-                'markdown' => $this->faker->text
+                'markdown' => $this->faker->text,
+                'slug' => $post->slug
             ]);
 
         $response
