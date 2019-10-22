@@ -60,6 +60,6 @@ class Post extends Model implements Feedable
 
     public function summary()
     {
-        return substr(strip_tags($this->attributes['markdown']), 0, 290).'...';
+        return substr(strip_tags($this->markdown), 0, 290).'...';
     }
 }
