@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Duncan McClean, a Laravel and Statamic Developer</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('static/css/app.css') }}">
     <link rel="alternate" type="application/atom+xml" title="All Duncan McClean's Posts" href="/feed">
     <meta name="description" content="Duncan McClean is a Web Developer and Student from Scotland.">
     <meta property="og:site_name" content="duncanm.dev">
@@ -71,6 +71,6 @@
         </footer>
     </div>
 
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('static/js/app.js') }}"></script>
 </body>
 </html>
