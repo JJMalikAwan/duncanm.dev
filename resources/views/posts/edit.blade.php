@@ -15,6 +15,13 @@
             <textarea name="markdown" cols="30" rows="10">{{ old('markdown') ?? $post->markdown }}</textarea>
         </div>
 
+        <h3 class="mt-8 mb-2 text-3xl">Extra Fields</h3>
+
+        <div>
+            <label for="slug">Slug</label>
+            <input type="text" name="slug" value="{{ $post->slug }}" placeholder="{{ str_replace(' ', '-', strtolower($post->title)) }}">
+        </div>
+
         <button type="submit">Update</button>
     </form>
 @endsection

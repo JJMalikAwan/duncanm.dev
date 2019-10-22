@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\PostStoreRequest;
+use App\Http\Requests\PostUpdateRequest;
 use App\Jobs\PublishOnDevTo;
 use App\Post;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store(PostRequest $request)
+    public function store(PostStoreRequest $request)
     {
         $validated = $request->validated();
 
@@ -52,12 +53,13 @@ class PostController extends Controller
         ]);
     }
 
-    public function update(PostRequest $request, Post $post)
+    public function update(PostUpdateRequest $request, Post $post)
     {
         $validated = $request->validated();
 
         $post->title = $request->title;
         $post->markdown = $request->markdown;
+        $post->slug = $request->slug;
         $post->save();
 
         return redirect(route('posts.show', ['post' => $post]));
