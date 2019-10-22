@@ -39,6 +39,10 @@ return [
     |
     */
 
-    'allowIframes' => false,
+    'allowIframes' => true,
+
+    "allowedTags" => [
+        'script'
+    ],
 
 ];
