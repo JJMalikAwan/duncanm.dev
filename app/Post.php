@@ -57,4 +57,9 @@ class Post extends Model implements Feedable
     {
         return Post::published()->get();
     }
+
+    public function summary()
+    {
+        return substr(strip_tags($this->attributes['markdown']), 0, 290).'...';
+    }
 }

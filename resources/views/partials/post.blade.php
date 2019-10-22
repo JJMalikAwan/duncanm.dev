@@ -5,7 +5,7 @@
             <h3 class="text-sm">{{ $post->date }}</h3>
         </div>
 
-        <p>{{ substr(strip_tags($post->markdown), 0, 140) }}</p>
+        <p>{{ $post->summary() }}</p>
     </a>
 
     @auth
