@@ -54,7 +54,7 @@
     }
 
     pre {
-        @apply bg-gray-100 rounded-lg p-2 my-4 font-mono w-full;
+        @apply bg-gray-100 rounded-r-lg border-l-4 border-gray-400 p-2 my-4 w-full;
     }
 }
 

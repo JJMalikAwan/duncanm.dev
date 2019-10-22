@@ -11418,11 +11418,13 @@ video {
 
 .content-area pre {
     background-color: #f7fafc;
-    border-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left-width: 4px;
+    border-color: #cbd5e0;
     padding: 0.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     width: 100%;
   }
 
