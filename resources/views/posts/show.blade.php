@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $post->title)
+
 @section('content')
     <div class="mini-container">
         <header class="border-b-2 border-gray-400 mb-6 px-2 py-4">

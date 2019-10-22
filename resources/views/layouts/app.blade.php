@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Duncan McClean</title>
+    <title>@yield('title') | Duncan McClean, a Laravel and Statamic Developer</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="alternate" type="application/atom+xml" title="News" href="/feed">
+    <link rel="alternate" type="application/atom+xml" title="All Duncan McClean's Posts" href="/feed">
+    <meta name="description" content="Duncan McClean is a Web Developer and Student from Scotland.">
+    <meta property="og:site_name" content="duncanm.dev">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:description" content="Duncan McClean is a Web Developer and Student from Scotland.">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ config('app.url') }}/static/images/duncan.jpg">
+
+    @if($post)
+        <meta property="og:title" content="{{ $post->title }} | duncanm.dev"/>
+        <meta property="og:description" content="{{ $post->summary() }}"/>
+
+        <meta property="article:published_time" content="{{\Carbon\Carbon::parse($post->is_published)->toIso8601String() }}"/>
+        <meta property="og:updated_time" content="{{ \Carbon\Carbon::parse($post->updated_at)->toIso8601String() }}"/>
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:description" content="{{ $post->summary() }}"/>
+        <meta name="twitter:title" content="{{ $post->title }} | duncanm.dev"/>
+        <meta name="twitter:site" content="@damcclean"/>
+        <meta name="twitter:image" content="{{ config('app.url') }}/static/images/duncan.jpg"/>
+        <meta name="twitter:creator" content="@damcclean"/>
+    @endif
+
 </head>
 <body class="text-gray-800">
     <div id="app">
@@ -19,7 +41,7 @@
         <header id="header" class="w-full mb-12">
             <div class="border-b py-4 px-2 border-gray-200 container mx-auto flex flex-row items-center justify-between">
                 <a class="flex flex-row items-center" href="/">
-                    <img class="w-12 h-12 rounded-full mr-4" src="https://damcclean-blog.s3.amazonaws.com/duncan.jpg" alt="Duncan McClean">
+                    <img class="w-12 h-12 rounded-full mr-4" src="/static/images/duncan.jpg" alt="Duncan McClean">
                     <strong class="font-medium text-lg">Duncan McClean</strong>
                 </a>
 

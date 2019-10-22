@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Create Post')
+
 @section('content')
     <form action="{{ route('posts.store') }}" method="post" class="mini-container">
         @csrf

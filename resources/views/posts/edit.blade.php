@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Edit: '.$post->title)
+
 @section('content')
     <form action="{{ route('posts.update', ['post' => $post]) }}" method="post" class="mini-container">
         @csrf
