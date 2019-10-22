@@ -9,6 +9,6 @@ The site's not done yet. In fact, it'll probably never be done. Although, when i
 * [ ] S3 Media uploads
 * [ ] Change when post is published
 * [ ] add errors to crud update screens
-* [ ] Customise slug
 * [ ] Code highlighting
 * [ ] Fix image proxy issues for S3 through Github Markdown
+* [ ] Fix script parsing issues
