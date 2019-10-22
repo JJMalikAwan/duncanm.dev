@@ -28,6 +28,13 @@ class PublishOnDevTo implements ShouldQueue
         $this->dev = new DevTo();
     }
 
+    public function tags()
+    {
+        return [
+            'post:'.$this->post->id
+        ];
+    }
+
     /**
      * Execute the job.
      *
