@@ -33,8 +33,9 @@
 <body class="text-gray-800">
     <div id="app">
         @auth
-            <div class="fixed bottom-0 right-0 bg-gray-800 px-6 py-2 rounded-t-lg mx-2 text-center text-white font-medium">
-                Logged in
+            <div class="fixed bottom-0 right-0 mx-2 flex flex-row-reverse items-center">
+                <a class="bg-gray-800 px-6 py-2 mx-2 rounded-t-lg text-center text-white font-medium" href="{{ route('logout') }}">Logged in</a>
+                <a class="bg-gray-700 px-6 py-2 mx-2 rounded-t-lg text-center text-white font-medium" href="{{ route('posts.create') }}">Create Post</a>
             </div>
         @endauth
 
