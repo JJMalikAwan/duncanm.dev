@@ -14,7 +14,7 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ config('app.url') }}/static/images/duncan.jpg">
 
-    @if($post)
+    @if(isset($post))
         <meta property="og:title" content="{{ $post->title }} | duncanm.dev"/>
         <meta property="og:description" content="{{ $post->summary() }}"/>
 
