@@ -43,20 +43,26 @@
         @endauth
 
         <header id="header" class="w-full mb-12">
-            <div class="border-b py-4 px-2 border-gray-200 container mx-auto flex flex-row items-center justify-between">
-                <a class="flex flex-row items-center" href="/">
-                    <img class="w-12 h-12 rounded-full mr-4" src="/static/images/duncan.jpg" alt="Duncan McClean">
-                    <strong class="font-medium text-lg">Duncan McClean</strong>
-                </a>
+            <div class="border-b py-4 px-2 border-gray-200 container mx-auto flex flex-col md:flex-row md:items-center md:justify-between">
+                <div class="flex flex-row justify-between">
+                    <a class="flex flex-row items-center" href="/">
+                        <img class="w-12 h-12 rounded-full mr-4" src="/static/images/duncan.jpg" alt="Duncan McClean">
+                        <strong class="font-medium text-lg">Duncan McClean</strong>
+                    </a>
 
-                <nav class="flex flex-row items-center">
-                    <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('posts.index')) border-gray-400 @endif hover:border-gray-400" href="{{ route('posts.index') }}">
+                    <button class="md:hidden font-bold text-sm p-2" @click="toggleNav">
+                        Menu
+                    </button>
+                </div>
+
+                <nav class="flex flex-col md:flex-row md:items-center mt-6 md:mt-0" :class="{ 'hidden md:flex' : !isNavToggled }">
+                    <a class="md:mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('posts.index')) border-gray-400 @endif hover:border-gray-400" href="{{ route('posts.index') }}">
                         Posts
                     </a>
-                    <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('about')) border-gray-400 @endif hover:border-gray-400" href="{{ route('about') }}">
+                    <a class="md:mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('about')) border-gray-400 @endif hover:border-gray-400" href="{{ route('about') }}">
                         About
                     </a>
-                    <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('newsletter')) border-gray-400 @endif hover:border-gray-400" href="{{ route('newsletter') }}">
+                    <a class="md:mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('newsletter')) border-gray-400 @endif hover:border-gray-400" href="{{ route('newsletter') }}">
                         Newsletter
                     </a>
                 </nav>
