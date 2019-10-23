@@ -11474,6 +11474,19 @@ form button:hover {
       background-color: #2d3748;
     }
 
+.newsletter-signup-form {
+  background-color: #f7fafc;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-left-width: 4px;
+  border-color: #cbd5e0;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

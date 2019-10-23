@@ -20,6 +20,9 @@ Route::get('/', 'PostController@index')
 Route::get('/about', 'AboutController')
     ->name('about');
 
+Route::get('/newsletter', 'NewsletterController')
+    ->name('newsletter');
+
 Route::get('/create', 'PostController@create')
     ->name('posts.create')
     ->middleware('auth');

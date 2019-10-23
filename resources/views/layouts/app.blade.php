@@ -56,6 +56,9 @@
                     <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('about')) border-gray-400 @endif hover:border-gray-400" href="{{ route('about') }}">
                         About
                     </a>
+                    <a class="mx-4 font-bold text-sm p-2 border-b-2 border-transparent @if(url()->current() === route('newsletter')) border-gray-400 @endif hover:border-gray-400" href="{{ route('newsletter') }}">
+                        Newsletter
+                    </a>
                 </nav>
             </div>
         </header>

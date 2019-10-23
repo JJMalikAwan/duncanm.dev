@@ -87,3 +87,7 @@ form {
         }
     }
 }
+
+.newsletter-signup-form {
+    @apply bg-gray-100 rounded-r-lg border-l-4 border-gray-400 p-2 my-4 w-full mt-8;
+}
