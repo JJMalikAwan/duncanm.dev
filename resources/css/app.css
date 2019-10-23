@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 .mini-container {
-    @apply w-2/3 mx-auto;
+    @apply px-4;
+}
+
+@screen md {
+    .mini-container {
+        @apply w-2/3 mx-auto;
+    }
 }
 
 .content-area {
