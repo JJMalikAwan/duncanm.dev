@@ -183,7 +183,7 @@ routes:
 You should now be able to view your RSS feed and sitemap at the following URLs.
 
 - RSS Feed: `https://your-site.com/feed`
-- Sitemap: `https://your-site.com/sitemap.xml`'
+- Sitemap: `https://your-site.com/sitemap.xml`',
                 'is_published' => '2018-03-22T19:37:00.000+00:00'
             ],
             [
