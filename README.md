@@ -12,5 +12,4 @@ The site's not done yet. In fact, it'll probably never be done. Although, when i
 * [ ] Fix image proxy issues for S3 through Github Markdown
 * [ ] Fix script parsing issues
 * [ ] Move pages to using database markdown
-* [ ] Newsletter signup form
 * [ ] Webmentions
