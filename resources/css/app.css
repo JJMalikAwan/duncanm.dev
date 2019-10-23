@@ -12,6 +12,10 @@
     }
 }
 
+.sidenote {
+    @apply bg-gray-100 rounded-r-lg border-l-4 border-gray-400 p-2 my-4 w-full;
+}
+
 .content-area {
     @apply text-gray-900 leading-relaxed font-normal;
 
@@ -60,7 +64,11 @@
     }
 
     pre {
-        @apply bg-gray-100 rounded-r-lg border-l-4 border-gray-400 p-2 my-4 w-full;
+        @apply sidenote;
+    }
+
+    blockquote {
+        @apply sidenote;
     }
 }
 
@@ -95,5 +103,5 @@ form {
 }
 
 .newsletter-signup-form {
-    @apply bg-gray-100 rounded-r-lg border-l-4 border-gray-400 p-2 my-4 w-full mt-8;
+    @apply sidenote mt-8;
 }
