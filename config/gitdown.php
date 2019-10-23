@@ -42,7 +42,7 @@ return [
     'allowIframes' => true,
 
     "allowedTags" => [
-        'script'
+        'script', 'iframe'
     ],
 
 ];
