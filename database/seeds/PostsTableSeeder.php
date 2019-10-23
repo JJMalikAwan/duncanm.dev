@@ -17,7 +17,35 @@ class PostsTableSeeder extends Seeder
             [
                 'title' => 'How I built a Web Scraper to create a Bin Collection API',
                 'slug' => 'bin-web-scraper',
-                'markdown' => '<p>A few months back I wrote some code that would go to my local council\'s website, search for a street name, open the link, get the bins for that week. When I got it working I was amazed at how easy it was. I was able to just take out content from another site and present it however I wanted.</p><p>I wrote this project with the end goal of turning it into Voice skills for Alexa and Google Assistant, which I will do, just in a few weeks when I have some spare time.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="https://damcclean-ghost.herokuapp.com/content/images/2019/07/bin-scraper.png" class="kg-image"></figure><!--kg-card-end: image--><p>Above is the PHP function I wrote to serve the API request. I\'m just going to walk you through the code.</p><p>So the first thing it does is sets up three arrays, the <code>binArray</code>, the <code>timeArray</code> and the <code>locationArray</code>. These will be used later to store data we capture during our scraping.</p><p>The next two variables hold the two URL parameters required for the request. So the API request URL would look like this. <code>https://bin-collections.herokuapp.com/api/bin?street=Calderwood%20Road&amp;area=camglen</code></p><p>We then get have four if statements. Each of the if statements check if the <code>$area</code> parameter equals to one of the areas. It then sets the base URL for the search results on the local council\'s website.</p><p>The next thing we do is to setup Goutte, which is a PHP web scraper library. I used a Laravel wrapper for Goutte in this project. We send Goutte to the base URL, the one we set in the last bit.</p><p>On the page we then go ahead and find the result links and we click on the first one we find and we grab the URL from that and store that in the <code>$link</code>variable.</p><p>Now we go to the street page we found in the search results.</p><p>The next part of the code, we find parts in the web page and take out the text of it and we store it in the arrays we created a minute ago.</p><p>So for example, we store the location in the <code>locationArray</code> and so on.</p><p>Then we go ahead and send a JSON response with the content of each of the arrays.</p><p>On the frontend of my bin collection site, I\'m using a Vue component that makes HTTP requests to the API I built.</p><p>I\'m pretty proud of the whole thing. It could probably be simplified quite a bit but at least it works.</p>',
+                'markdown' => 'A few months back I wrote some code that would go to my local council\'s website, search for a street name, open the link, get the bins for that week. When I got it working I was amazed at how easy it was. I was able to just take out content from another site and present it however I wanted.
+
+I wrote this project with the end goal of turning it into Voice skills for Alexa and Google Assistant, which I will do, just in a few weeks when I have some spare time.
+
+![https://damcclean-blog.s3.amazonaws.com/bin-scraper.png](https://damcclean-blog.s3.amazonaws.com/bin-scraper.png)
+
+Above is the PHP function I wrote to serve the API request. I\'m just going to walk you through the code.
+
+So the first thing it does is sets up three arrays, the `binArray`, the `timeArray` and the `locationArray`. These will be used later to store data we capture during our scraping.
+
+The next two variables hold the two URL parameters required for the request. So the API request URL would look like this. `https://bin-collections.herokuapp.com/api/bin?street=Calderwood%20Road&area=camglen`
+
+We then get have four if statements. Each of the if statements check if the `$area` parameter equals to one of the areas. It then sets the base URL for the search results on the local council\'s website.
+
+The next thing we do is to setup Goutte, which is a PHP web scraper library. I used a Laravel wrapper for Goutte in this project. We send Goutte to the base URL, the one we set in the last bit.
+
+On the page we then go ahead and find the result links and we click on the first one we find and we grab the URL from that and store that in the `$link`variable.
+
+Now we go to the street page we found in the search results.
+
+The next part of the code, we find parts in the web page and take out the text of it and we store it in the arrays we created a minute ago.
+
+So for example, we store the location in the `locationArray` and so on.
+
+Then we go ahead and send a JSON response with the content of each of the arrays.
+
+On the frontend of my bin collection site, I\'m using a Vue component that makes HTTP requests to the API I built.
+
+I\'m pretty proud of the whole thing. It could probably be simplified quite a bit but at least it works.',
                 'is_published' => '2019-01-04T19:53:00.000+00:00'
             ],
             [
@@ -29,11 +57,47 @@ class PostsTableSeeder extends Seeder
             [
                 'title' => 'The Dream Web Development Stack: Statamic, Laravel, TailwindCSS and VueJS',
                 'slug' => 'dream-web-dev-stack',
-                'markdown' => '<p>For the past few years I’ve been a hobbyist web developer, making websites for friends and family. During this time, I’ve used all sorts of stuff to build my websites. Bootstrap, WordPress and jQuery.</p><p>However, most of the stuff I was using felt clunky and I didn’t 100% understand it.</p><p>Now in 2018, I think I may have found my dream web development stack. It consists of Statamic, Laravel, TailwindCSS and VueJS.</p><!--kg-card-begin: markdown--><p><img src="https://damcclean-blog.s3.amazonaws.com/statamic-homepage.png" alt="https://damcclean-blog.s3.amazonaws.com/statamic-homepage.png"></p>
-<!--kg-card-end: markdown--><h1 id="statamic"><a href="https://statamic.com/"><strong>Statamic</strong></a></h1><p>Statamic is a flat-file content management system which means that all of your data is stored in markdown files. This <a href="https://statamic.com/why"><strong>is great</strong></a> because it means that there is no MySQL database to worry about.</p><p>Previously I was working with WordPress to built sites which meant having to write ugly PHP loops every time I wanted to display content. Whereas with Statamic, you can use something like this to display the latest posts.</p><!--kg-card-begin: markdown--><p><img src="https://damcclean-blog.s3.amazonaws.com/laravel-homepage.png" alt="https://damcclean-blog.s3.amazonaws.com/laravel-homepage.png"></p>
-<!--kg-card-end: markdown--><h1 id="laravel"><a href="https://laravel.com/"><strong>Laravel</strong></a></h1><p><a href="https://laravel.com/"><strong>Laravel</strong></a> is a PHP framework for web artisans. It’s easy to learn and it makes building web applications fast.</p><p>If you would like to check out what a Laravel project looks like, check out one I’ve <a href="https://github.com/damcclean/laravel-licenses"><strong>created here</strong></a>.</p><!--kg-card-begin: markdown--><p><img src="https://damcclean-blog.s3.amazonaws.com/tailwindcss-homepage.png" alt="https://damcclean-blog.s3.amazonaws.com/tailwindcss-homepage.png"></p>
-<!--kg-card-end: markdown--><h1 id="tailwindcss">TailwindCSS</h1><p><a href="https://tailwindcss.com/"><strong>TailwindCSS</strong></a> is a CSS framework like no other. It’s a utility first framework that allows for quick development.</p><p>For example if you want a div with 2rem of padding, a background of black and flexbox, the code would look like this.</p><!--kg-card-begin: html--><script src="https://gist.github.com/8af206b0b5bc6c2d055b120b158aa437.js"></script><!--kg-card-end: html--><p>It feels a bit strange at first as you’re adding tones of classes, but you’ll get used to it and wonder why you did it any other way.</p><!--kg-card-begin: markdown--><p><img src="https://damcclean-blog.s3.amazonaws.com/vuejs-homepage.png" alt="https://damcclean-blog.s3.amazonaws.com/vuejs-homepage.png"></p>
-<!--kg-card-end: markdown--><h1 id="vue-js">Vue.js</h1><p>You’ve probably used jQuery or some other Javascript library before. Personally, I had used jQuery and I hadn’t really got the hang of it. I was always coping and pasting code and when things broke I had absolutely no idea what happened. However, then I stumbled upon <a href="https://vuejs.org/"><strong>VueJS</strong></a> and gave it a try and I loved it. It’s so easy to write. One of the first things I built with Vue was a postcode locator that hooks into an API and grabs information about a certain UK postcode. I’ve embedded it below.</p><!--kg-card-begin: html--><div class="cp_embed_wrapper"><iframe name="cp_embed_1" src="https://codepen.io/damcclean/embed/Jvyqwb?height=265&amp;theme-id=0&amp;slug-hash=Jvyqwb&amp;default-tab=html%2Cresult&amp;user=damcclean&amp;pen-title=Postcodes.io%20API&amp;name=cp_embed_1" scrolling="no" frameborder="0" height="265" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" title="Postcodes.io API" class="cp_embed_iframe " style="width: 100%; overflow:hidden; display:block;" id="cp_embed_Jvyqwb"></iframe></div><!--kg-card-end: html-->',
+                'markdown' => 'For the past few years I’ve been a hobbyist web developer, making websites for friends and family. During this time, I’ve used all sorts of stuff to build my websites. Bootstrap, WordPress and jQuery.
+
+However, most of the stuff I was using felt clunky and I didn’t 100% understand it.
+
+Now in 2018, I think I may have found my dream web development stack. It consists of Statamic, Laravel, TailwindCSS and VueJS.
+
+![https://damcclean-blog.s3.amazonaws.com/statamic-homepage.png](https://damcclean-blog.s3.amazonaws.com/statamic-homepage.png)
+
+# [**Statamic**](https://statamic.com/)
+
+Statamic is a flat-file content management system which means that all of your data is stored in markdown files. This [**is great**](https://statamic.com/why) because it means that there is no MySQL database to worry about.
+
+Previously I was working with WordPress to built sites which meant having to write ugly PHP loops every time I wanted to display content. Whereas with Statamic, you can use something like this to display the latest posts.
+
+![https://damcclean-blog.s3.amazonaws.com/laravel-homepage.png](https://damcclean-blog.s3.amazonaws.com/laravel-homepage.png)
+
+# [**Laravel**](https://laravel.com/)
+
+[**Laravel**](https://laravel.com/) is a PHP framework for web artisans. It’s easy to learn and it makes building web applications fast.
+
+If you would like to check out what a Laravel project looks like, check out one I’ve [**created here**](https://github.com/damcclean/laravel-licenses).
+
+![https://damcclean-blog.s3.amazonaws.com/tailwindcss-homepage.png](https://damcclean-blog.s3.amazonaws.com/tailwindcss-homepage.png)
+
+# TailwindCSS
+
+[**TailwindCSS**](https://tailwindcss.com/) is a CSS framework like no other. It’s a utility first framework that allows for quick development.
+
+For example if you want a div with 2rem of padding, a background of black and flexbox, the code would look like this.
+
+```html
+<div class="p-8 bg-black flex"></div>
+```
+
+It feels a bit strange at first as you’re adding tones of classes, but you’ll get used to it and wonder why you did it any other way.
+
+![https://damcclean-blog.s3.amazonaws.com/vuejs-homepage.png](https://damcclean-blog.s3.amazonaws.com/vuejs-homepage.png)
+
+# Vue.js
+
+You’ve probably used jQuery or some other Javascript library before. Personally, I had used jQuery and I hadn’t really got the hang of it. I was always coping and pasting code and when things broke I had absolutely no idea what happened. However, then I stumbled upon [**VueJS**](https://vuejs.org/) and gave it a try and I loved it. It’s so easy to write. One of the first things I built with Vue was a postcode locator that hooks into an API and grabs information about a certain UK postcode. You can [view it over on CodePen](https://codepen.io/damcclean/pen/Jvyqwb).',
                 'is_published' => '2018-09-03T19:40:00.000+01:00'
             ],
             [
@@ -74,7 +138,224 @@ class PostsTableSeeder extends Seeder
             [
                 'title' => 'Getting Started with testing Laravel Apps',
                 'slug' => 'getting-started-laravel-testing',
-                'markdown' => '<p>Recently I\'ve started to write tests in my Laravel applications. Tests are useful because they allow you to make sure important parts of your application are working, things like registration or subscriptions. Things that could be easily missed and could cause uproar if they broke.</p><p>When I started building ReadCast, about a month ago I created it as a prototype and missed out on writing tests. Now that the application is stable and has a few users, I think it\'s about time to write some tests.</p><p>In a standard Laravel install, PHPUnit is already installed for you and so are a few example tests.</p><p>In this tutorial I\'m going to go through:</p><ul><li>Setting up your tests</li><li>Creating database seeds</li><li>Writing tests</li></ul><h1 id="setting-up-your-tests">Setting up your tests</h1><p>In Laravel, your tests belong inside the <code>tests</code> directory. In there you have two directories. One for your feature tests and one for your unit tests. I should probably know the difference between this but I don\'t, so go elsewhere if you want to know the meaning.</p><p>Most applications will talk to a database when doing anything. When testing, there are two types of databases that people will likely use. They will either use a SQLite database or a MySQL database.</p><p>If you don\'t know, a SQLite database is pretty much a lightweight SQL database that\'s stored in a single file.</p><p>I tend to create a separate MySQL database for running my tests. Why? Because last time I tried to use SQLite I managed to break some dependency that every programming language needed which meant I had to rebuild my Mac, not a fun time. However, feel free to use whatever you like best.</p><p>If you like using MySQL like me, this is how I tend to configure it.</p><p>First, I create my testing database, usually called something like <code>app_testing</code>.</p><p>The next thing I do is go to my <code>database.php</code> configuration file and setup a new <code>testing</code> database connection. It looks like this:</p><!--kg-card-begin: html--><script src="https://gist.github.com/a9e2a72ad497686e9af4e58ec24b8191.js"></script><!--kg-card-end: html--><p>The values rely on some environment variables so you\'ll need to add these env variables to your <code>.env</code> and <code>.env.example</code> files.</p><!--kg-card-begin: html--><script src="https://gist.github.com/9d9470f11a72049d68d84de6d07a79f0.js"></script><!--kg-card-end: html--><p>Now there\'s one more thing you need to do before being fully setup. You\'ll need to specific the type of database you wish to use when testing. We can do this in PHPUnit\'s configuration file, <code>phpunit.xml</code>.</p><p>In the bottom <code>&lt;php&gt;</code> part, make it look like below, where we add the <code>DB_CONNECTION</code> rule and specify the <code>testing</code> database connection we just created.</p><!--kg-card-begin: html--><script src="https://gist.github.com/a1bb6424e5fcd0bef425845e35ec3166.js"></script><!--kg-card-end: html--><p>That should be us done with the setup.</p><h1 id="setting-up-factories">Setting up factories</h1><p>Factories allow you to you to generate database records. Laravel comes with a package called Faker which makes it easy to create factories with fake information. Things like names, emails, passwords, that sort of thing.</p><p>You can find your factories in the <code>database/factories</code> directory. If you need to create your own factory, you can do so with a simple artisan command: <code>php artisan make:factory ArticleFactory</code></p><p>Laravel comes with a User Factory, so we\'ll just use that one. The user factory looks like this:</p><!--kg-card-begin: html--><script src="https://gist.github.com/39acfc0776a6e6ea4360b1023eeab896.js"></script><!--kg-card-end: html--><p>The information in the sample user factory is fine for me but you might want to change it, depending on what fields you have in models.</p><h1 id="writing-tests">Writing tests</h1><p>Laravel gives you a pretty basic test which visits a page and the test passes if the status of the page request is 200 (that means its OK).</p><!--kg-card-begin: html--><script src="https://gist.github.com/3d71a4cf2f75def27f56e2e5874d58a9.js"></script><!--kg-card-end: html--><p>Now that we know what tests look like, let\'s delete the example test and create our own. To create our example test, run this command:</p><!--kg-card-begin: code--><pre><code>php artisan make:test LoginTest</code></pre><!--kg-card-end: code--><p>In the test I\'m going to write, I\'m going to create a user, login to my application, submit my email and password then the test will pass if we get status code 200.</p><p>Just a heads up, when writing test, make sure to start the method with <code>test</code> so PHPUnit knows which methods are actually tests.</p><p>In our test, we need to specify that we want to use the <code>RefreshDatabase</code> trait. This will allow us to have a clean database for every test meaning results won\'t be messed up with those from other tests, You can add trait like this:</p><!--kg-card-begin: html--><script src="https://gist.github.com/82dd2c03629b3e71661e0255665ca929.js"></script><!--kg-card-end: html--><p>Now let\'s write the test. The first thing I said we would do in the test would be to create the user we want to login. We can use Factories to do this. In the code sample below, we\'re creating a user and storing it\'s information in the <code>user</code> variable.</p><!--kg-card-begin: code--><pre><code>$user = factory(\App\User::class)-&gt;create();</code></pre><!--kg-card-end: code--><p>Now we have created the user, we need to send a POST request to my login endpoint with my email and password.</p><p>The below code will find the input with the name of <code>email</code> and will fill it with the email of the user we created and will find the input with the name <code>password</code>and will fill it with the password of the user (by default, Laravel\'s user factory password is \'secret\'). It will then find the button with the text that says \'Login\' which submits the form. Then it checks to make sure we\'re redirected successfully to the <code>/articles</code> url.</p><!--kg-card-begin: html--><script src="https://gist.github.com/59cd9be4b9ea5423704f24002da87adc.js"></script><!--kg-card-end: html--><p>You should now have something that looks a little like this:</p><!--kg-card-begin: html--><script src="https://gist.github.com/7722e6434a61c1cb4ecaffd09dc1e435.js"></script><!--kg-card-end: html--><p>If you\'ve done everything correctly, you should be able to run your tests and see them all pass.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="https://damcclean-ghost.herokuapp.com/content/images/2019/07/happy-times.png" class="kg-image"></figure><!--kg-card-end: image--><p>And that\'s it, we\'ve got Laravel setup and we\'ve written tests to make sure logins to our application are working.</p>',
+                'markdown' => 'Recently I\'ve started to write tests in my Laravel applications. Tests are useful because they allow you to make sure important parts of your application are working, things like registration or subscriptions. Things that could be easily missed and could cause uproar if they broke.
+
+When I started building ReadCast, about a month ago I created it as a prototype and missed out on writing tests. Now that the application is stable and has a few users, I think it\'s about time to write some tests.
+
+In a standard Laravel install, PHPUnit is already installed for you and so are a few example tests.
+
+In this tutorial I\'m going to go through:
+
+- Setting up your tests
+- Creating database seeds
+- Writing tests
+
+# Setting up your tests
+
+In Laravel, your tests belong inside the `tests` directory. In there you have two directories. One for your feature tests and one for your unit tests. I should probably know the difference between this but I don\'t, so go elsewhere if you want to know the meaning.
+
+Most applications will talk to a database when doing anything. When testing, there are two types of databases that people will likely use. They will either use a SQLite database or a MySQL database.
+
+If you don\'t know, a SQLite database is pretty much a lightweight SQL database that\'s stored in a single file.
+
+I tend to create a separate MySQL database for running my tests. Why? Because last time I tried to use SQLite I managed to break some dependency that every programming language needed which meant I had to rebuild my Mac, not a fun time. However, feel free to use whatever you like best.
+
+If you like using MySQL like me, this is how I tend to configure it.
+
+First, I create my testing database, usually called something like `app_testing`.
+
+The next thing I do is go to my `database.php` configuration file and setup a new `testing` database connection. It looks like this:
+
+```php
+\'testing\' => [
+    \'driver\'    => \'mysql\',
+    \'host\'      => env(\'TESTING_DB_HOST\', \'localhost\'),
+    \'database\'  => env(\'TESTING_DB_DATABASE\', \'app_testing\'),
+    \'username\'  => env(\'TESTING_DB_USERNAME\', \'homestead\'),
+    \'password\'  => env(\'TESTING_DB_PASSWORD\', \'secret\'),
+    \'charset\'   => \'utf8\',
+    \'collation\' => \'utf8_unicode_ci\',
+    \'prefix\'    => \'\',
+    \'strict\'    => false,
+]
+```
+
+The values rely on some environment variables so you\'ll need to add these env variables to your `.env` and `.env.example` files.
+
+```
+TESTING_DB_HOST=
+TESTING_DB_DATABASE=
+TESTING_DB_USERNAME=
+TESTING_DB_PASSWORD=
+```
+
+Now there\'s one more thing you need to do before being fully setup. You\'ll need to specific the type of database you wish to use when testing. We can do this in PHPUnit\'s configuration file, `phpunit.xml`.
+
+In the bottom `<php>` part, make it look like below, where we add the `DB_CONNECTION` rule and specify the `testing` database connection we just created.
+
+```xml
+<php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="MAIL_DRIVER" value="array"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="DB_CONNECTION" value="testing"/>
+    </php>
+```
+
+That should be us done with the setup.
+
+# Setting up factories
+
+Factories allow you to you to generate database records. Laravel comes with a package called Faker which makes it easy to create factories with fake information. Things like names, emails, passwords, that sort of thing.
+
+You can find your factories in the `database/factories` directory. If you need to create your own factory, you can do so with a simple artisan command: `php artisan make:factory ArticleFactory`
+
+Laravel comes with a User Factory, so we\'ll just use that one. The user factory looks like this:
+
+```php
+<?php
+  
+use Illuminate\Support\Str;
+use Faker\Generator as Faker;
+
+/*
+|--------------------------------------------------------------------------
+| Model Factories
+|--------------------------------------------------------------------------
+|
+| This directory should contain each of the model factory definitions for
+| your application. Factories provide a convenient way to generate new
+| model instances for testing / seeding your application\'s database.
+|
+*/
+
+$factory->define(App\User::class, function (Faker $faker) {
+    return [
+        \'name\' => $faker->name,
+        \'email\' => $faker->unique()->safeEmail,
+        \'email_verified_at\' => now(),
+        \'password\' => \'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm\', // secret
+        \'remember_token\' => Str::random(10),
+    ];
+});
+```
+
+The information in the sample user factory is fine for me but you might want to change it, depending on what fields you have in models.
+
+# Writing tests
+
+Laravel gives you a pretty basic test which visits a page and the test passes if the status of the page request is 200 (that means its OK).
+
+```php
+<?php
+  
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testBasicTest()
+    {
+        $response = $this->get(\'/\');
+        $response->assertStatus(200);
+    }
+}
+```
+
+Now that we know what tests look like, let\'s delete the example test and create our own. To create our example test, run this command:
+
+```
+php artisan make:test LoginTest
+```
+
+In the test I\'m going to write, I\'m going to create a user, login to my application, submit my email and password then the test will pass if we get status code 200.
+
+Just a heads up, when writing test, make sure to start the method with `test` so PHPUnit knows which methods are actually tests.
+
+In our test, we need to specify that we want to use the `RefreshDatabase` trait. This will allow us to have a clean database for every test meaning results won\'t be messed up with those from other tests, You can add trait like this:
+
+```php
+<?php
+  
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class LoginTest extends TestCase
+{
+    use RefreshDatabase;
+  
+    //
+}
+```
+
+Now let\'s write the test. The first thing I said we would do in the test would be to create the user we want to login. We can use Factories to do this. In the code sample below, we\'re creating a user and storing it\'s information in the `user` variable.
+
+```
+$user = factory(\App\User::class)->create();
+```
+
+Now we have created the user, we need to send a POST request to my login endpoint with my email and password.
+
+The below code will find the input with the name of `email` and will fill it with the email of the user we created and will find the input with the name `password`and will fill it with the password of the user (by default, Laravel\'s user factory password is \'secret\'). It will then find the button with the text that says \'Login\' which submits the form. Then it checks to make sure we\'re redirected successfully to the `/articles` url.
+
+```php
+$response = $this->post(\'/login\', [
+	\'email\' => $user->email,
+	\'password\' => \'secret\'
+]);
+
+$response->assertStatus(302)
+	->assertRedirect(\'/articles\');
+```
+
+You should now have something that looks a little like this:
+
+```php
+<?php
+  
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class LoginTest extends TestCase
+{
+    use RefreshDatabase;
+  
+    public function testLogin()
+    {
+        $user = factory(\App\User::class)->create();
+      
+        $response = $this->post(\'/login\', [
+            \'email\' => $user->email,
+            \'password\' => \'secret\'
+        ]);
+      
+        $response->assertStatus(302)
+            ->assertRedirect(\'/articles\');
+    }
+}
+```
+
+If you\'ve done everything correctly, you should be able to run your tests and see them all pass.
+
+![https://damcclean-blog.s3.amazonaws.com/happy-times.png](https://damcclean-blog.s3.amazonaws.com/happy-times.png)
+
+And that\'s it, we\'ve got Laravel setup and we\'ve written tests to make sure logins to our application are working.',
                 'is_published' => '2019-07-17T19:59:57.000+01:00'
             ],
             [
@@ -200,7 +481,170 @@ $user-&gt;updateStripeCustomer($stripeData);</code></pre><!--kg-card-end: code--
             [
                 'title' => 'Using Vuex to store authentication in Local Storage',
                 'slug' => 'vuex-authentication',
-                'markdown' => '<p>I\'m currently Rebuilding <a href="https://bibliospot.com/"><strong>BiblioSpot</strong></a> as a standalone Vue app which fetches data from our private API. At the start of the project, I was wondering, how I should go about handling Authentication? I tried out a few different solutions but this one seems to work, so I\'m going to go along with it.</p><p>The first thing I did was obviously create a new Vue app so I did <code>vue create app-name</code>. I chose Vue router, Vuex and some other stuff that was there that looked like a good option. I also installed Axios for the HTTP request stuff. Yes I know Vue has their own package for this and there is a similar function built into Javascript, but who cares.</p><p>Now, the first thing that we should do is to write code to allow the user to actually login. I\'m using Laravel Passport for API auth and it gives us the <code>/oauth/token</code> route which we can send a payload to and it will give us our access token. A simple bit of code like this should do the jiffy.</p><!--kg-card-begin: html--><script src="https://gist.github.com/31b08670959d877080fa0d5e408a940c.js"></script><!--kg-card-end: html--><p>Once you\'ve got your HTTP requests to work, you can create your Vuex store. This is a simplified version of my <code>store.js</code> file.</p><!--kg-card-begin: html--><script src="https://gist.github.com/7afaab35ab9341cb481e182f7147768a.js"></script><!--kg-card-end: html--><p>Basically what I\'ve done in my Vuex store is set it up so that you can change and view the bearer/access token.</p><p>Now that we\'ve got this in place, when you login your token should be set in your Vuex store and you should be directed to <code>/</code>. (you can change this route in the success part of the Axios request in the <code>Login.vue</code> component)</p><p>However, if you refresh the page, your bearer token is no longer in the Vuex store. This is where local storage comes in. It can store data that can be used even if you close the browser entirely.</p><p>The way I stored my state in local storage was by using the vuex-persistedstate npm package. You just need to install it and import it into your store, like so.</p><!--kg-card-begin: html--><script src="https://gist.github.com/41c61ae1ca444fa6c73ad98f0c0aad54.js"></script><!--kg-card-end: html--><p>Now you should be able to login and refresh your page and your bearer token will still be in your store.</p><p>Now you\'ve pretty much got everything working. However, if you need to check within views/components of your application if the user is logged in or out for that matter I\'ve devised a little component that you can use that will detect such things and will redirect the user to the login page. (If you need to check that the user is logged out you can place the redirect at the other side of the if statement)</p><!--kg-card-begin: html--><script src="https://gist.github.com/8ee863c16828e507cba2d2bf6d4f3938.js"></script><!--kg-card-end: html--><p>That\'s us done!</p>',
+                'markdown' => 'I\'m currently Rebuilding [**BiblioSpot**](https://bibliospot.com/) as a standalone Vue app which fetches data from our private API. At the start of the project, I was wondering, how I should go about handling Authentication? I tried out a few different solutions but this one seems to work, so I\'m going to go along with it.
+
+The first thing I did was obviously create a new Vue app so I did `vue create app-name`. I chose Vue router, Vuex and some other stuff that was there that looked like a good option. I also installed Axios for the HTTP request stuff. Yes I know Vue has their own package for this and there is a similar function built into Javascript, but who cares.
+
+Now, the first thing that we should do is to write code to allow the user to actually login. I\'m using Laravel Passport for API auth and it gives us the `/oauth/token` route which we can send a payload to and it will give us our access token. A simple bit of code like this should do the jiffy.
+
+```vue
+<template>
+  <div>
+    <h1>Login</h1>
+    <input v-model="email" type="email">
+    <input v-model="password" type="password">
+  </div>
+</template>
+
+<script>
+import axios from \'axios\'
+export default {
+  data: function() {
+    return {
+      email: \'\',
+      password: \'\',
+      response: \'\'
+    }
+  },
+  methods: {
+    post: function() {
+      axios.post(\'[your site url]/oauth/token\', {
+        \'grant_type\': \'password\',
+        \'client_id\': [your client id],
+        \'client_secret\': [your client secret],
+        \'username\': this.email,
+        \'password\': this.password,
+        \'scope\': \'\'
+      })
+        .then(response => {
+          this.response = response.data;
+          this.$store.dispatch(\'bearer\', this.response.access_token);
+          this.$router.push(\'/\')
+        });
+    }
+  }
+}
+</script>
+```
+
+Once you\'ve got your HTTP requests to work, you can create your Vuex store. This is a simplified version of my `store.js` file.
+
+```javascript
+import Vue from \'vue\'
+import Vuex from \'vuex\'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    user: {
+      bearer: \'\'
+    }
+  },
+  
+  mutations: {
+    bearer (state, payload) {
+      state.user.bearer = payload
+    }
+  },
+
+  actions: {
+    bearer (context, payload) {
+      context.commit(\'bearer\', payload)
+    }
+  },
+
+  getters: {
+    bearer: state => {
+      return state.user.bearer
+    }
+  }
+
+})
+```
+
+Basically what I\'ve done in my Vuex store is set it up so that you can change and view the bearer/access token.
+
+Now that we\'ve got this in place, when you login your token should be set in your Vuex store and you should be directed to `/`. (you can change this route in the success part of the Axios request in the `Login.vue` component)
+
+However, if you refresh the page, your bearer token is no longer in the Vuex store. This is where local storage comes in. It can store data that can be used even if you close the browser entirely.
+
+The way I stored my state in local storage was by using the vuex-persistedstate npm package. You just need to install it and import it into your store, like so.
+
+```javascript
+import Vue from \'vue\'
+import Vuex from \'vuex\'
+import createPersistedState from \'vuex-persistedstate\'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  plugins: [createPersistedState()]
+  
+  state: {
+    user: {
+      bearer: \'\'
+    }
+  },
+  
+  mutations: {
+    bearer (state, payload) {
+      state.user.bearer = payload
+    }
+  },
+
+  actions: {
+    bearer (context, payload) {
+      context.commit(\'bearer\', payload)
+    }
+  },
+
+  getters: {
+    bearer: state => {
+      return state.user.bearer
+    }
+  }
+
+})
+```
+
+Now you should be able to login and refresh your page and your bearer token will still be in your store.
+
+Now you\'ve pretty much got everything working. However, if you need to check within views/components of your application if the user is logged in or out for that matter I\'ve devised a little component that you can use that will detect such things and will redirect the user to the login page. (If you need to check that the user is logged out you can place the redirect at the other side of the if statement)
+
+```vue
+<template>
+</template>
+
+<script>
+export default {
+    computed: {
+        loggedIn: function() {
+            return this.$store.getters.loggedIn
+        }
+    },
+    methods: {
+        loginHandler: function() {
+            if (this.loggedIn == true) {
+                //
+            } else {
+                this.$router.push(\'/login\')
+            }
+        }
+    },
+    mounted: function() {
+        this.loginHandler()
+    },
+    watch: {
+        loggedIn: function() {
+            this.loginHandler
+        }
+    }
+}
+</script>
+```
+
+That\'s us done!',
                 'is_published' => '2018-12-28T19:51:00.000+00:00'
             ]
         ];
