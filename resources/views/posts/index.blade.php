@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="mini-container">
-        @foreach($posts as $post)
+        @foreach($posts as $preview)
             @include('partials.post')
         @endforeach
     </div>
