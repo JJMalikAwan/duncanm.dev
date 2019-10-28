@@ -29,6 +29,24 @@
         <meta name="twitter:creator" content="@damcclean"/>
     @endif
 
+    @if(config('app.env') === 'production')
+        <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+        <script>
+            (function(f, a, t, h, o, m){
+                a[h]=a[h]||function(){
+                    (a[h].q=a[h].q||[]).push(arguments)
+                };
+                o=f.createElement('script'),
+                    m=f.getElementsByTagName('script')[0];
+                o.async=1; o.src=t; o.id='fathom-script';
+                m.parentNode.insertBefore(o,m)
+            })(document, window, '//fathom.littlepenguin.dev/tracker.js', 'fathom');
+            fathom('set', 'siteId', 'JCXEQ');
+            fathom('trackPageview');
+        </script>
+        <!-- / Fathom -->
+    @endif
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-light.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
